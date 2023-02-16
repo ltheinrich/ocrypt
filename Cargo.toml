@@ -1,0 +1,11 @@
+[package]
+name = "ocrypt"
+version = "0.0.0"
+edition = "2021"
+rust-version = "1.56"
+license = "ISC"
+authors = ["Lennart Heinrich <lennart@ltheinrich.de>"]
+repository = "https://ltheinrich.de/ocrypt"
+description = "Experimental cryptography library"
+
+[dependencies]
