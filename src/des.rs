@@ -97,7 +97,7 @@ pub fn encrypt(plaintext: &str, password: &str) -> Result<(OwnedBits, u8)> {
     Ok((blocks, if space == 64 { 0 } else { space as u8 }))
 }
 
-pub fn decrypt(cipher: OwnedBits, password: &str, space: u8) -> Result<String> {
+pub fn decrypt(cipher: Bits, password: &str, space: u8) -> Result<String> {
     let mut keys = gen_keys(&from_str(password))?;
     keys.reverse();
 
@@ -125,7 +125,7 @@ fn test_encrypt_decrypt() {
     assert_eq!(&plaintext, &from_str("hallo du"));
 
     let (cipher, space) = encrypt("Das hier ist ein Test", "8-bytes!").unwrap();
-    let plaintext = decrypt(cipher, "8-bytes!", space).unwrap();
+    let plaintext = decrypt(&cipher, "8-bytes!", space).unwrap();
     assert_eq!(&plaintext, "Das hier ist ein Test");
 }
 
