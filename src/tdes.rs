@@ -3,7 +3,7 @@ use crate::des::{crypt_64, gen_keys};
 use crate::{Error, Result};
 
 pub fn encrypt(plaintext: &str, password: &str) -> Result<(OwnedBits, u8)> {
-    if password.as_bytes().len() != 24 {
+    if password.len() != 24 {
         return Error::SizeError.into();
     }
 
@@ -31,7 +31,7 @@ pub fn encrypt(plaintext: &str, password: &str) -> Result<(OwnedBits, u8)> {
 }
 
 pub fn decrypt(cipher: OwnedBits, password: &str, space: u8) -> Result<String> {
-    if password.as_bytes().len() != 24 {
+    if password.len() != 24 {
         return Error::SizeError.into();
     }
 

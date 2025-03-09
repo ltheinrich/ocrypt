@@ -2,18 +2,18 @@ use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use des::cipher::{generic_array::GenericArray, BlockDecrypt, BlockEncrypt, KeyInit};
 use des::Des;
 use ocrypt::des::{decrypt, encrypt};
-use rand::distributions::Alphanumeric;
-use rand::{thread_rng, Rng};
+use rand::distr::Alphanumeric;
+use rand::{rng, Rng};
 
 fn criterion_benchmark(c: &mut Criterion) {
     let bc = 38400;
 
-    let key: String = thread_rng()
+    let key: String = rng()
         .sample_iter(&Alphanumeric)
         .take(8)
         .map(char::from)
         .collect();
-    let data: String = thread_rng()
+    let data: String = rng()
         .sample_iter(&Alphanumeric)
         .take(bc * 8)
         .map(char::from)

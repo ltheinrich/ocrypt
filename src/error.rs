@@ -27,9 +27,9 @@ impl Error {
     }
 }
 
-impl<T> Into<Result<T>> for Error {
-    fn into(self) -> Result<T> {
-        Err(self)
+impl<T> From<Error> for Result<T> {
+    fn from(val: Error) -> Self {
+        Err(val)
     }
 }
 

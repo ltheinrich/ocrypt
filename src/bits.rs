@@ -39,7 +39,7 @@ pub fn xor(data: BitsMut, key: Bits) -> Result<()> {
     }
 
     for i in 0..data.len() {
-        data[i] = data[i] ^ key[i];
+        data[i] ^= key[i];
     }
 
     Ok(())
@@ -57,7 +57,7 @@ fn test_xor() {
 }
 
 /// Return values for XOR of data[i] and key[i]
-pub fn xor_copy<'a>(data: Bits, key: Bits) -> Result<OwnedBits> {
+pub fn xor_copy(data: Bits, key: Bits) -> Result<OwnedBits> {
     if data.len() != key.len() {
         return Error::SizeError.into();
     }
