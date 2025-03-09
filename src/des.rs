@@ -1,8 +1,8 @@
 use std::mem::swap;
 
 use crate::bits::{
-    from_str, split_owned, to_bits, to_u8, xor, Bits, BitsMut, ExpansionTable, OwnedBits,
-    PermutationTable, SubstitutionTable,
+    Bits, BitsMut, ExpansionTable, OwnedBits, PermutationTable, SubstitutionTable, from_str,
+    split_owned, to_bits, to_u8, xor,
 };
 use crate::{Error, Result};
 

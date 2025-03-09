@@ -1,4 +1,4 @@
-use crate::bits::{from_str, to_u8, OwnedBits};
+use crate::bits::{OwnedBits, from_str, to_u8};
 use crate::des::{crypt_64, gen_keys};
 use crate::{Error, Result};
 

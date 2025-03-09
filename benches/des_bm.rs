@@ -1,9 +1,9 @@
-use criterion::{black_box, criterion_group, criterion_main, Criterion};
-use des::cipher::{generic_array::GenericArray, BlockDecrypt, BlockEncrypt, KeyInit};
+use criterion::{Criterion, black_box, criterion_group, criterion_main};
 use des::Des;
+use des::cipher::{BlockDecrypt, BlockEncrypt, KeyInit, generic_array::GenericArray};
 use ocrypt::des::{decrypt, encrypt};
 use rand::distr::Alphanumeric;
-use rand::{rng, Rng};
+use rand::{Rng, rng};
 
 fn criterion_benchmark(c: &mut Criterion) {
     let bc = 38400;
