@@ -10,7 +10,7 @@ description = "Experimental cryptography library"
 [dependencies]
 
 [dev-dependencies]
-criterion = { version = "0.5.1", features = ["html_reports"] }
+criterion = { version = "0.6.0", features = ["html_reports"] }
 rand = "0.9.1"
 des = "0.8.1"
 
